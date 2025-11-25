@@ -156,6 +156,10 @@
         .info-row { display: flex; align-items: flex-start; margin-bottom: 25px; }
         .info-row i { font-size: 1.4rem; color: var(--accent); margin-right: 20px; }
         
+        /* Phone number links in contact section */
+        .phone-link { color: white; text-decoration: none; display: block; margin-bottom: 5px; transition: 0.3s; }
+        .phone-link:hover { color: var(--accent); }
+
         .contact-form-container {
             background: white; padding: 40px; border-radius: 20px;
             box-shadow: var(--shadow); max-width: 700px; margin: 0 auto; text-align: center;
@@ -183,6 +187,39 @@
             }
             .nav-links.active { transform: translateY(0); }
             .menu-toggle { display: block; }
+        }
+
+        /* --- MOBILE FLOATING CALL BUTTON --- */
+        .mobile-call-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #2e7d32; /* Green color */
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 9999;
+            text-decoration: none;
+            animation: pulse-btn 2s infinite;
+        }
+        .mobile-call-btn:hover { color: white; }
+        
+        /* Pulse Animation */
+        @keyframes pulse-btn {
+            0% { box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(46, 125, 50, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(46, 125, 50, 0); }
+        }
+
+        /* Hide on Desktop (Screens larger than 768px) */
+        @media (min-width: 769px) {
+            .mobile-call-btn { display: none; }
         }
     </style>
 </head>
@@ -212,7 +249,7 @@
         </div>
     </section>
 
-    <!-- Products (UPDATED WITH YOUR IMAGES) -->
+    <!-- Products -->
     <section id="products">
         <div class="section-header reveal">
             <h2>Our Products</h2>
@@ -220,7 +257,7 @@
         </div>
 
         <div class="products-grid">
-            <!-- 1. Submersible Pumps (Your Image) -->
+            <!-- 1. Submersible Pumps -->
             <div class="product-card reveal">
                 <div class="badge">Farming</div>
                 <div class="img-wrapper">
@@ -232,7 +269,7 @@
                 </div>
             </div>
 
-            <!-- 2. Water Pump (Your Image) -->
+            <!-- 2. Water Pump -->
             <div class="product-card reveal">
                 <div class="badge">Farming</div>
                 <div class="img-wrapper">
@@ -244,7 +281,7 @@
                 </div>
             </div>
 
-            <!-- 3. Sprayer Pump (Unsplash Image) -->
+            <!-- 3. Sprayer Pump -->
             <div class="product-card reveal">
                 <div class="badge">Farming</div>
                 <div class="img-wrapper">
@@ -256,7 +293,7 @@
                 </div>
             </div>
 
-            <!-- 4. Cooling Fan (Your Image) -->
+            <!-- 4. Cooling Fan -->
             <div class="product-card reveal">
                 <div class="badge electric">Accessories</div>
                 <div class="img-wrapper">
@@ -268,7 +305,7 @@
                 </div>
             </div>
 
-            <!-- 5. Flour Mill Motor (Unsplash Image) -->
+            <!-- 5. Flour Mill Motor -->
             <div class="product-card reveal">
                 <div class="badge">Commercial</div>
                 <div class="img-wrapper">
@@ -280,7 +317,7 @@
                 </div>
             </div>
 
-            <!-- 6. Air Cooler (Your Image) -->
+            <!-- 6. Air Cooler -->
             <div class="product-card reveal">
                 <div class="badge electric">Home</div>
                 <div class="img-wrapper">
@@ -292,7 +329,7 @@
                 </div>
             </div>
 
-            <!-- 7. Ceiling Fan (Your Image) -->
+            <!-- 7. Ceiling Fan -->
             <div class="product-card reveal">
                 <div class="badge electric">Home</div>
                 <div class="img-wrapper">
@@ -304,7 +341,7 @@
                 </div>
             </div>
 
-            <!-- 8. Wall Fan (Your Image - NEW ITEM) -->
+            <!-- 8. Wall Fan -->
             <div class="product-card reveal">
                 <div class="badge electric">Home</div>
                 <div class="img-wrapper">
@@ -357,8 +394,18 @@
             <div class="contact-top-row reveal">
                 <div class="contact-info">
                     <h3 style="margin-bottom: 25px;">Contact Details</h3>
-                    <div class="info-row"><i class="fas fa-map-marker-alt"></i><div><h4>Address</h4><p>Hatuniya Bus Stand,<br>Tehsil: Shamgarh,<br>Dist: Mandsaur (M.P.) - 458883</p></div></div>
-                    <div class="info-row"><i class="fas fa-phone-alt"></i><div><h4>Call Us</h4><p>+91 9685240411</p></div></div>
+                    <div class="info-row"><i class="fas fa-map-marker-alt"></i><div><h4>Address</h4><p>Hatuniya Bus Stand,<br>Teh Shamgarh,<br>Dist: Mandsaur (M.P.) - 458883</p></div></div>
+                    
+                    <!-- UPDATED PHONE NUMBERS -->
+                    <div class="info-row">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Call / WhatsApp</h4>
+                            <a href="https://wa.me/919685240411" class="phone-link">+91 9685240411</a>
+                            <a href="https://wa.me/919977119433" class="phone-link">+91 9977119433</a>
+                        </div>
+                    </div>
+                    
                     <div class="info-row"><i class="fas fa-envelope"></i><div><h4>Email</h4><p>patidarelectric.sp@gmail.com</p></div></div>
                 </div>
                 <div class="map-box">
@@ -371,7 +418,7 @@
                     <div class="form-group"><input type="text" id="uName" placeholder="Your Name" required></div>
                     <div class="form-group"><input type="tel" id="uMobile" placeholder="Mobile Number" required></div>
                     <div class="form-group"><textarea id="uMessage" rows="4" placeholder="How can we help you?" required></textarea></div>
-                    <button type="submit" class="btn-submit">Send Message</button>
+                    <button type="submit" class="btn-submit">Send Message via WhatsApp</button>
                 </form>
             </div>
         </div>
@@ -381,6 +428,11 @@
         <p style="font-weight: 600; color: white;">Patidar Electrics & Motor Rewinding</p>
         <div class="copyright"><p>&copy; 2025 All Rights Reserved.</p></div>
     </footer>
+
+    <!-- MOBILE CALL BUTTON (Visible only on mobile) -->
+    <a href="tel:+919977119433" class="mobile-call-btn">
+        <i class="fas fa-phone-alt"></i>
+    </a>
 
     <script>
         window.addEventListener('scroll', function() {
@@ -408,10 +460,17 @@
             var name = document.getElementById("uName").value;
             var mobile = document.getElementById("uMobile").value;
             var message = document.getElementById("uMessage").value;
-            var phoneNumber = "919685240411"; 
+            
+            // Primary number for the form submission (Suresh Patidar)
+            var phoneNumber = "919977119433" || "919685240411"; 
+            
             var emailAddress = "patidarelectric.sp@gmail.com";
-            var fullMessage = "Hello Patidar Electrics,%0A%0A" + "My Name: " + name + "%0A" + "Mobile: " + mobile + "%0A" + "Enquiry: " + message;
+            var fullMessage = "Hello Patidar Electrics,%0A%0A" + " Name: " + name + "%0A" + "Mobile: " + mobile + "%0A" + "Enquiry: " + message;
+            
+            // Open WhatsApp
             window.open("https://wa.me/" + phoneNumber + "?text=" + fullMessage, '_blank');
+            
+            // Optional: Also open email client
             setTimeout(function() {
                 window.location.href = "mailto:" + emailAddress + "?subject=New Enquiry from " + name + "&body=" + fullMessage;
             }, 1000);
