@@ -111,7 +111,7 @@
             display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #eee;
         }
         .img-wrapper img {
-            width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;
+            width: 100%; height: 100%; object-fit: contain; transition: transform 0.5s ease;
         }
         .product-card:hover .img-wrapper img { transform: scale(1.1); }
         .p-details { padding: 25px; text-align: center; }
@@ -129,22 +129,22 @@
         }
         .service-list li i { color: var(--accent); margin-right: 15px; }
 
-        /* --- OWNER SECTION (UPDATED) --- */
+        /* --- OWNER SECTION --- */
         .owner-section { background: #f4f6f8; text-align: center; padding-top: 80px; }
         .owner-card {
             background: white; max-width: 500px; margin: 0 auto; padding: 40px;
             border-radius: 20px; box-shadow: var(--shadow); border-top: 6px solid var(--primary);
         }
         .owner-avatar {
-            width: 150px; height: 150px; /* Size of the circle */
+            width: 150px; height: 150px;
             border-radius: 50%;
             margin: 0 auto 20px;
-            overflow: hidden; /* Cuts the image into a circle */
+            overflow: hidden;
             border: 4px solid var(--primary);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         .owner-avatar img {
-            width: 100%; height: 100%; object-fit: cover; /* Ensures face is not distorted */
+            width: 100%; height: 100%; object-fit: cover;
         }
 
         /* --- CONTACT --- */
@@ -212,7 +212,7 @@
         </div>
     </section>
 
-    <!-- Products (Updated Images) -->
+    <!-- Products (UPDATED WITH YOUR IMAGES) -->
     <section id="products">
         <div class="section-header reveal">
             <h2>Our Products</h2>
@@ -220,35 +220,11 @@
         </div>
 
         <div class="products-grid">
-            <!-- 1. Monoblock Pump -->
+            <!-- 1. Submersible Pumps (Your Image) -->
             <div class="product-card reveal">
                 <div class="badge">Farming</div>
                 <div class="img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=600&q=80" alt="Monoblock Pump">
-                </div>
-                <div class="p-details">
-                    <h3>Blue Monoblock Pump</h3>
-                    <p>High-pressure centrifugal pump for irrigation. Durable body with copper winding.</p>
-                </div>
-            </div>
-
-            <!-- 2. Sprayer Pump -->
-            <div class="product-card reveal">
-                <div class="badge">Farming</div>
-                <div class="img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1622383563227-04401cd4e5f4?auto=format&fit=crop&w=600&q=80" alt="Sprayer Pump">
-                </div>
-                <div class="p-details">
-                    <h3>Battery Sprayer Pump</h3>
-                    <p>Kissan Agro style knapsack sprayer. Long battery life for pesticide spraying.</p>
-                </div>
-            </div>
-
-            <!-- 3. Submersible Pumps -->
-            <div class="product-card reveal">
-                <div class="badge">Farming</div>
-                <div class="img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&w=600&q=80" alt="Submersible Pump">
+                    <img src="submersible.jpg" alt="Submersible Pumps">
                 </div>
                 <div class="p-details">
                     <h3>Submersible Pumps (V4/V6)</h3>
@@ -256,23 +232,47 @@
                 </div>
             </div>
 
-            <!-- 4. Irrigation System -->
+            <!-- 2. Water Pump (Your Image) -->
             <div class="product-card reveal">
                 <div class="badge">Farming</div>
                 <div class="img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1563298723-dcfebaa392e3?auto=format&fit=crop&w=600&q=80" alt="Irrigation">
+                    <img src="waterpump.jpg" alt="Water Pump">
                 </div>
                 <div class="p-details">
-                    <h3>Irrigation Motors</h3>
-                    <p>Heavy-duty motors for pipeline irrigation systems. High water discharge capacity.</p>
+                    <h3>Heavy Duty Water Pump</h3>
+                    <p>High-pressure pump for irrigation and water transfer. Durable metal body.</p>
                 </div>
             </div>
 
-            <!-- 5. Flour Mill Motor -->
+            <!-- 3. Sprayer Pump (Unsplash Image) -->
+            <div class="product-card reveal">
+                <div class="badge">Farming</div>
+                <div class="img-wrapper">
+                    <img src="mv2.avif" alt="Sprayer Pump">
+                </div>
+                <div class="p-details">
+                    <h3>Battery Sprayer Pump</h3>
+                    <p>Kissan Agro style knapsack sprayer. Long battery life for pesticide spraying.</p>
+                </div>
+            </div>
+
+            <!-- 4. Cooling Fan (Your Image) -->
+            <div class="product-card reveal">
+                <div class="badge electric">Accessories</div>
+                <div class="img-wrapper">
+                    <img src="coolingfan.jpg" alt="Cooling Fan">
+                </div>
+                <div class="p-details">
+                    <h3>Cooling & Exhaust Fans</h3>
+                    <p>High-performance cooling fans for panels and industrial ventilation.</p>
+                </div>
+            </div>
+
+            <!-- 5. Flour Mill Motor (Unsplash Image) -->
             <div class="product-card reveal">
                 <div class="badge">Commercial</div>
                 <div class="img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Motor">
+                    <img src="Water-Transfer-Pump.avif" alt="Motor">
                 </div>
                 <div class="p-details">
                     <h3>Flour Mill Motor</h3>
@@ -280,41 +280,42 @@
                 </div>
             </div>
 
-            <!-- 6. Starter Panel -->
-            <div class="product-card reveal">
-                <div class="badge electric">Accessories</div>
-                <div class="img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1555664424-778a69022365?auto=format&fit=crop&w=600&q=80" alt="Starter Panel">
-                </div>
-                <div class="p-details">
-                    <h3>Motor Starter Panel</h3>
-                    <p>Auto-switch starters to protect your expensive motors from voltage fluctuation.</p>
-                </div>
-            </div>
-
-            <!-- 7. Air Cooler -->
+            <!-- 6. Air Cooler (Your Image) -->
             <div class="product-card reveal">
                 <div class="badge electric">Home</div>
                 <div class="img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1544012426-360633d253c6?auto=format&fit=crop&w=600&q=80" alt="Air Cooler">
+                    <img src="cooler.jpg" alt="Air Cooler">
                 </div>
                 <div class="p-details">
-                    <h3>Premium Desert Cooler</h3>
+                    <h3>Premium Air Cooler</h3>
                     <p>High-performance coolers with powerful air throw to beat the summer heat.</p>
                 </div>
             </div>
 
-            <!-- 8. Ceiling Fan -->
+            <!-- 7. Ceiling Fan (Your Image) -->
             <div class="product-card reveal">
                 <div class="badge electric">Home</div>
                 <div class="img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1618465367362-2f9243267044?auto=format&fit=crop&w=600&q=80" alt="Ceiling Fan">
+                    <img src="ceilingfan.jpg" alt="Ceiling Fan">
                 </div>
                 <div class="p-details">
-                    <h3>High-Speed Ceiling Fan</h3>
-                    <p>Energy-efficient fans with high RPM. Available in various designs.</p>
+                    <h3>Remote Ceiling Fan</h3>
+                    <p>Modern energy-efficient fans with remote control and high RPM.</p>
                 </div>
             </div>
+
+            <!-- 8. Wall Fan (Your Image - NEW ITEM) -->
+            <div class="product-card reveal">
+                <div class="badge electric">Home</div>
+                <div class="img-wrapper">
+                    <img src="wallfan.jpg" alt="Wall Fan">
+                </div>
+                <div class="p-details">
+                    <h3>Wall Mount Fan</h3>
+                    <p>Oscillating wall fan with remote. Perfect for shops and homes.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -337,11 +338,10 @@
         </div>
     </section>
 
-    <!-- Owner Section (Image Added) -->
+    <!-- Owner Section -->
     <section class="owner-section">
         <div class="owner-card reveal">
             <div class="owner-avatar">
-                <!-- THIS IS WHERE THE IMAGE LOADS -->
                 <img src="owner.jpg" alt="Mr. Suresh Patidar">
             </div>
             <h3>Mr. Suresh Patidar</h3>
@@ -408,7 +408,7 @@
             var name = document.getElementById("uName").value;
             var mobile = document.getElementById("uMobile").value;
             var message = document.getElementById("uMessage").value;
-            var phoneNumber = "919685042819"; 
+            var phoneNumber = "919685240411"; 
             var emailAddress = "patidarelectric.sp@gmail.com";
             var fullMessage = "Hello Patidar Electrics,%0A%0A" + "My Name: " + name + "%0A" + "Mobile: " + mobile + "%0A" + "Enquiry: " + message;
             window.open("https://wa.me/" + phoneNumber + "?text=" + fullMessage, '_blank');
