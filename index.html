@@ -12,23 +12,17 @@
     <style>
         /* --- VARIABLES & THEME --- */
         :root {
-            --primary: #004e92; /* Deep Industrial Blue */
+            --primary: #004e92;
             --primary-dark: #000428;
-            --accent: #ff9100; /* Electric Orange */
-            --farming: #2e7d32; /* Agriculture Green */
+            --accent: #ff9100;
+            --farming: #2e7d32;
             --light: #f8f9fa;
             --dark: #121212;
-            --glass: rgba(255, 255, 255, 0.95);
             --shadow: 0 15px 35px rgba(0,0,0,0.1);
             --transition: all 0.4s ease;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
             font-family: 'Open Sans', sans-serif;
@@ -37,61 +31,31 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-        }
-
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
         a { text-decoration: none; }
         ul { list-style: none; }
 
         /* --- NAVIGATION --- */
         header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            transition: var(--transition);
-            padding: 15px 0;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            padding: 15px 0; background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px); box-shadow: 0 2px 15px rgba(0,0,0,0.05);
         }
 
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
+            max-width: 1200px; margin: 0 auto; display: flex;
+            justify-content: space-between; align-items: center; padding: 0 20px;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary-dark);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: flex;
-            flex-direction: column;
-            line-height: 1;
+            font-size: 1.5rem; font-weight: 800; color: var(--primary-dark);
+            text-transform: uppercase; display: flex; flex-direction: column; line-height: 1;
         }
-
         .logo span { color: var(--accent); font-size: 0.9rem; margin-top: 2px; }
 
         .nav-links { display: flex; gap: 30px; }
-
-        .nav-links a {
-            color: var(--primary-dark);
-            font-weight: 600;
-            font-size: 0.95rem;
-            position: relative;
-            transition: 0.3s;
-        }
-
+        .nav-links a { color: var(--primary-dark); font-weight: 600; transition: 0.3s; }
         .nav-links a:hover { color: var(--accent); }
-
         .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--primary-dark); }
 
         /* --- HERO SECTION --- */
@@ -99,331 +63,123 @@
             height: 90vh;
             background: linear-gradient(rgba(0, 4, 40, 0.7), rgba(0, 78, 146, 0.6)), 
                         url('https://images.unsplash.com/photo-1625246333195-58197bd47d26?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
-            margin-bottom: 50px;
+            background-size: cover; background-position: center; background-attachment: fixed;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; color: white; padding: 0 20px; margin-bottom: 50px;
         }
 
-        .hero-content {
-            max-width: 800px;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
-
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; text-shadow: 0 4px 15px rgba(0,0,0,0.5); }
         .tagline-badge {
-            background: var(--accent);
-            color: var(--primary-dark);
-            padding: 8px 25px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            display: inline-block;
-            margin-bottom: 25px;
-            box-shadow: 0 0 20px rgba(255, 145, 0, 0.6);
+            background: var(--accent); color: var(--primary-dark); padding: 8px 25px;
+            border-radius: 50px; font-weight: 700; display: inline-block; margin-bottom: 25px;
         }
-
         .btn-main {
-            padding: 15px 45px;
-            background: white;
-            color: var(--primary);
-            border-radius: 50px;
-            font-weight: 800;
-            transition: var(--transition);
-            display: inline-block;
-            margin-top: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            padding: 15px 45px; background: white; color: var(--primary);
+            border-radius: 50px; font-weight: 800; transition: var(--transition);
+            display: inline-block; margin-top: 25px;
         }
+        .btn-main:hover { background: var(--accent); color: white; transform: translateY(-3px); }
 
-        .btn-main:hover {
-            background: var(--accent);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        /* --- SECTIONS GENERAL --- */
+        /* --- SECTIONS --- */
         section { padding: 60px 20px; }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--primary-dark);
-            position: relative;
-            display: inline-block;
-        }
-
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--primary-dark); position: relative; display: inline-block; }
         .section-header h2::after {
-            content: '';
-            width: 80px;
-            height: 4px;
-            background: var(--accent);
-            position: absolute;
-            bottom: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
+            content: ''; width: 80px; height: 4px; background: var(--accent);
+            position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%);
         }
 
         /* --- PRODUCTS GRID --- */
         .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px; max-width: 1200px; margin: 0 auto;
         }
-
         .product-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-            border: 1px solid rgba(0,0,0,0.05);
+            background: white; border-radius: 20px; overflow: hidden;
+            box-shadow: var(--shadow); transition: var(--transition); position: relative;
         }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            border-bottom: 4px solid var(--accent);
-        }
-
+        .product-card:hover { transform: translateY(-10px); border-bottom: 4px solid var(--accent); }
+        
         .badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--farming);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            z-index: 2;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: absolute; top: 15px; right: 15px; background: var(--farming);
+            color: white; padding: 5px 12px; border-radius: 30px; font-size: 0.8rem; font-weight: 700; z-index: 2;
         }
-
         .badge.electric { background: var(--primary); }
 
         .img-wrapper {
-            height: 240px;
-            overflow: hidden;
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-            border-bottom: 1px solid #eee;
+            height: 240px; overflow: hidden; background: #fff;
+            display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #eee;
         }
-
         .img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            transition: transform 0.5s ease;
+            width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;
         }
-
         .product-card:hover .img-wrapper img { transform: scale(1.1); }
-
         .p-details { padding: 25px; text-align: center; }
-        .p-details h3 { font-size: 1.2rem; margin-bottom: 8px; color: var(--primary-dark); }
-        .p-details p { color: #666; font-size: 0.9rem; line-height: 1.5; }
 
-        /* --- SERVICES (REWINDING) --- */
-        .services-section {
-            background: linear-gradient(to right, #000428, #004e92);
-            color: white;
-            margin-top: 50px;
-            border-radius: 0;
-        }
-
+        /* --- SERVICES --- */
+        .services-section { background: linear-gradient(to right, #000428, #004e92); color: white; }
         .services-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            flex-wrap: wrap;
+            max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 60px; flex-wrap: wrap;
         }
-
-        .service-img { flex: 1; min-width: 350px; }
-        .service-img img { 
-            width: 100%; 
-            border-radius: 15px; 
-            border: 5px solid rgba(255,255,255,0.2);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .service-content { flex: 1; min-width: 350px; }
-        .service-content h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--white); }
-        .service-content span { color: var(--accent); }
-        
+        .service-img, .service-content { flex: 1; min-width: 350px; }
+        .service-img img { width: 100%; border-radius: 15px; border: 5px solid rgba(255,255,255,0.2); }
         .service-list li {
-            margin-bottom: 18px;
-            display: flex;
-            align-items: center;
-            font-size: 1.1rem;
-            background: rgba(255,255,255,0.1);
-            padding: 10px 15px;
-            border-radius: 8px;
+            margin-bottom: 18px; display: flex; align-items: center; font-size: 1.1rem;
+            background: rgba(255,255,255,0.1); padding: 10px 15px; border-radius: 8px;
         }
         .service-list li i { color: var(--accent); margin-right: 15px; }
 
-        /* --- OWNER SECTION --- */
-        .owner-section {
-            background: #f4f6f8;
-            text-align: center;
-            padding-top: 80px;
-        }
-
+        /* --- OWNER SECTION (UPDATED) --- */
+        .owner-section { background: #f4f6f8; text-align: center; padding-top: 80px; }
         .owner-card {
-            background: white;
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            border-top: 6px solid var(--primary);
+            background: white; max-width: 500px; margin: 0 auto; padding: 40px;
+            border-radius: 20px; box-shadow: var(--shadow); border-top: 6px solid var(--primary);
         }
-
         .owner-avatar {
-            width: 90px;
-            height: 90px;
-            background: #eef2f5;
+            width: 150px; height: 150px; /* Size of the circle */
             border-radius: 50%;
             margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.2rem;
-            color: var(--primary);
-            border: 3px solid var(--primary);
+            overflow: hidden; /* Cuts the image into a circle */
+            border: 4px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .owner-avatar img {
+            width: 100%; height: 100%; object-fit: cover; /* Ensures face is not distorted */
         }
 
-        /* --- CONTACT & MAP LAYOUT --- */
-        .contact-wrapper {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .contact-top-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-            background: var(--primary);
-            color: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-        }
-
-        .map-box {
-            flex: 1;
-            min-width: 300px;
-            height: auto;
-            min-height: 320px;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 5px solid white;
-            box-shadow: var(--shadow);
-        }
-
+        /* --- CONTACT --- */
+        .contact-wrapper { max-width: 1100px; margin: 0 auto; }
+        .contact-top-row { display: flex; flex-wrap: wrap; gap: 30px; margin-bottom: 30px; }
+        .contact-info { flex: 1; min-width: 300px; background: var(--primary); color: white; padding: 40px; border-radius: 20px; }
+        .map-box { flex: 1; min-width: 300px; height: 320px; border-radius: 20px; overflow: hidden; border: 5px solid white; }
         .map-box iframe { width: 100%; height: 100%; border: 0; }
-
         .info-row { display: flex; align-items: flex-start; margin-bottom: 25px; }
-        .info-row i { font-size: 1.4rem; color: var(--accent); margin-right: 20px; margin-top: 5px; }
-        .info-row h4 { margin-bottom: 5px; font-size: 1.1rem; }
-        .info-row p { opacity: 0.9; font-size: 0.95rem; }
-
+        .info-row i { font-size: 1.4rem; color: var(--accent); margin-right: 20px; }
+        
         .contact-form-container {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
+            background: white; padding: 40px; border-radius: 20px;
+            box-shadow: var(--shadow); max-width: 700px; margin: 0 auto; text-align: center;
         }
-
         .form-group { margin-bottom: 20px; }
         .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #eee;
-            border-radius: 10px;
-            font-family: inherit;
-            background: #fcfcfc;
-            transition: 0.3s;
+            width: 100%; padding: 15px; border: 2px solid #eee; border-radius: 10px; background: #fcfcfc;
         }
-        .form-group input:focus, .form-group textarea:focus {
-            border-color: var(--primary);
-            outline: none;
-            background: white;
-        }
-
         .btn-submit {
-            width: 100%;
-            padding: 15px;
-            background: var(--primary-dark);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.3s;
-            font-size: 1rem;
+            width: 100%; padding: 15px; background: var(--primary-dark); color: white;
+            border: none; border-radius: 10px; font-weight: 700; cursor: pointer; transition: 0.3s;
         }
         .btn-submit:hover { background: var(--accent); }
 
-        /* --- FOOTER --- */
         footer { background: #0a0a0a; color: #888; padding: 40px 20px; text-align: center; }
-        .copyright { border-top: 1px solid #222; padding-top: 20px; font-size: 0.9rem; margin-top: 20px; }
-
-        /* --- ANIMATIONS --- */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        
+        /* Animation & Mobile */
         .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-
-        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
             .nav-links {
-                position: absolute;
-                right: 0;
-                top: 60px;
-                background: white;
-                flex-direction: column;
-                width: 100%;
-                padding: 30px;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-                transform: translateY(-150%);
-                transition: 0.4s;
-                z-index: 999;
+                position: absolute; right: 0; top: 60px; background: white; flex-direction: column;
+                width: 100%; padding: 30px; transform: translateY(-150%); transition: 0.4s;
             }
             .nav-links.active { transform: translateY(0); }
             .menu-toggle { display: block; }
@@ -435,13 +191,8 @@
     <!-- Header -->
     <header id="header">
         <div class="nav-container">
-            <div class="logo">
-                Patidar Electrics
-                <span>& Motor Rewinding</span>
-            </div>
-            <div class="menu-toggle" id="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
+            <div class="logo">Patidar Electrics <span>& Motor Rewinding</span></div>
+            <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#products">Products</a></li>
@@ -451,7 +202,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="tagline-badge">Powered by Trust Since Day 1</div>
@@ -461,7 +212,7 @@
         </div>
     </section>
 
-    <!-- Products Section -->
+    <!-- Products (Updated Images) -->
     <section id="products">
         <div class="section-header reveal">
             <h2>Our Products</h2>
@@ -469,36 +220,35 @@
         </div>
 
         <div class="products-grid">
-            
-            <!-- 1. Blue Monoblock Pump -->
+            <!-- 1. Monoblock Pump -->
             <div class="product-card reveal">
                 <div class="badge">Farming</div>
                 <div class="img-wrapper">
-                    <img src="https://5.imimg.com/data5/SELLER/Default/2022/12/TY/VO/QO/4944207/2-hp-monoblock-pump.jpg" alt="Blue Monoblock Pump">
+                    <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=600&q=80" alt="Monoblock Pump">
                 </div>
                 <div class="p-details">
                     <h3>Blue Monoblock Pump</h3>
-                    <p>High-pressure centrifugal pump for irrigation. Durable blue body with copper winding.</p>
+                    <p>High-pressure centrifugal pump for irrigation. Durable body with copper winding.</p>
                 </div>
             </div>
 
-            <!-- 2. Blue Knapsack Sprayer -->
+            <!-- 2. Sprayer Pump -->
             <div class="product-card reveal">
                 <div class="badge">Farming</div>
                 <div class="img-wrapper">
-                    <img src="https://5.imimg.com/data5/ANDROID/Default/2021/3/CZ/SD/GZ/124376049/product-jpeg-500x500.jpg" alt="Blue Battery Sprayer">
+                    <img src="https://images.unsplash.com/photo-1622383563227-04401cd4e5f4?auto=format&fit=crop&w=600&q=80" alt="Sprayer Pump">
                 </div>
                 <div class="p-details">
                     <h3>Battery Sprayer Pump</h3>
-                    <p>Kissan Agro style blue knapsack sprayer. Long battery life for pesticide spraying.</p>
+                    <p>Kissan Agro style knapsack sprayer. Long battery life for pesticide spraying.</p>
                 </div>
             </div>
 
-            <!-- 3. Submersible Pumps V4/V6 -->
+            <!-- 3. Submersible Pumps -->
             <div class="product-card reveal">
                 <div class="badge">Farming</div>
                 <div class="img-wrapper">
-                    <img src="https://5.imimg.com/data5/SELLER/Default/2023/5/307666699/V4-submersible-pump-500x500.jpg" alt="Submersible Pumps">
+                    <img src="https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&w=600&q=80" alt="Submersible Pump">
                 </div>
                 <div class="p-details">
                     <h3>Submersible Pumps (V4/V6)</h3>
@@ -510,7 +260,7 @@
             <div class="product-card reveal">
                 <div class="badge">Farming</div>
                 <div class="img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1563298723-dcfebaa392e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Irrigation Pump">
+                    <img src="https://images.unsplash.com/photo-1563298723-dcfebaa392e3?auto=format&fit=crop&w=600&q=80" alt="Irrigation">
                 </div>
                 <div class="p-details">
                     <h3>Irrigation Motors</h3>
@@ -522,7 +272,7 @@
             <div class="product-card reveal">
                 <div class="badge">Commercial</div>
                 <div class="img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop" alt="Flour Mill Motor">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Motor">
                 </div>
                 <div class="p-details">
                     <h3>Flour Mill Motor</h3>
@@ -530,11 +280,11 @@
                 </div>
             </div>
 
-            <!-- 6. Motor Starter Panel -->
+            <!-- 6. Starter Panel -->
             <div class="product-card reveal">
                 <div class="badge electric">Accessories</div>
                 <div class="img-wrapper">
-                    <img src="https://5.imimg.com/data5/SELLER/Default/2022/9/VK/QO/ZO/2660396/submersible-pump-control-panel-500x500.jpg" alt="Starter Panel">
+                    <img src="https://images.unsplash.com/photo-1555664424-778a69022365?auto=format&fit=crop&w=600&q=80" alt="Starter Panel">
                 </div>
                 <div class="p-details">
                     <h3>Motor Starter Panel</h3>
@@ -542,11 +292,11 @@
                 </div>
             </div>
 
-            <!-- 7. Premium Air Cooler -->
+            <!-- 7. Air Cooler -->
             <div class="product-card reveal">
                 <div class="badge electric">Home</div>
                 <div class="img-wrapper">
-                    <img src="https://m.media-amazon.com/images/I/71+2+3+4+5L._AC_SL1500_.jpg" alt="Premium Air Cooler">
+                    <img src="https://images.unsplash.com/photo-1544012426-360633d253c6?auto=format&fit=crop&w=600&q=80" alt="Air Cooler">
                 </div>
                 <div class="p-details">
                     <h3>Premium Desert Cooler</h3>
@@ -554,31 +304,29 @@
                 </div>
             </div>
 
-            <!-- 8. High Speed Fan -->
+            <!-- 8. Ceiling Fan -->
             <div class="product-card reveal">
                 <div class="badge electric">Home</div>
                 <div class="img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1618465367362-2f9243267044?q=80&w=800&auto=format&fit=crop" alt="High Speed Fan">
+                    <img src="https://images.unsplash.com/photo-1618465367362-2f9243267044?auto=format&fit=crop&w=600&q=80" alt="Ceiling Fan">
                 </div>
                 <div class="p-details">
                     <h3>High-Speed Ceiling Fan</h3>
                     <p>Energy-efficient fans with high RPM. Available in various designs.</p>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- Services Section (Rewinding) -->
+    <!-- Services -->
     <section id="services" class="services-section">
         <div class="services-container">
             <div class="service-img reveal">
-                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Motor Rewinding Workshop">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Rewinding">
             </div>
             <div class="service-content reveal">
                 <h2>Expert Motor <span>Rewinding</span></h2>
                 <p style="margin-bottom: 20px; opacity: 0.9;">Don't let a burnt motor stop your work. We provide precision rewinding services using 100% pure copper wire.</p>
-                
                 <ul class="service-list">
                     <li><i class="fas fa-check-circle"></i> Agricultural Pump Repair (V4/V6)</li>
                     <li><i class="fas fa-check-circle"></i> Openwell & Monoblock Motors</li>
@@ -589,11 +337,12 @@
         </div>
     </section>
 
-    <!-- Owner Section -->
+    <!-- Owner Section (Image Added) -->
     <section class="owner-section">
         <div class="owner-card reveal">
             <div class="owner-avatar">
-                <i class="fas fa-user-tie"></i>
+                <!-- THIS IS WHERE THE IMAGE LOADS -->
+                <img src="owner.jpg" alt="Mr. Suresh Patidar">
             </div>
             <h3>Mr. Suresh Patidar</h3>
             <p style="color: #777; font-weight: 600;">Owner</p>
@@ -601,146 +350,70 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact">
-        <div class="section-header reveal">
-            <h2>Visit Our Shop</h2>
-        </div>
-
+        <div class="section-header reveal"><h2>Visit Our Shop</h2></div>
         <div class="contact-wrapper">
-            <!-- Top Row: Info and Map Side by Side -->
             <div class="contact-top-row reveal">
-                
-                <!-- Contact Info -->
                 <div class="contact-info">
                     <h3 style="margin-bottom: 25px;">Contact Details</h3>
-                    <div class="info-row">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Address</h4>
-                            <p>Hatuniya Bus Stand,<br>Tehsil: Shamgarh,<br>Dist: Mandsaur (M.P.) - 458883</p>
-                        </div>
-                    </div>
-                    <div class="info-row">
-                        <i class="fas fa-phone-alt"></i>
-                        <div>
-                            <h4>Call Us</h4>
-                            <p>+91 98765 43210</p>
-                        </div>
-                    </div>
-                    <div class="info-row">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>patidarelectric.sp@gmail.com</p>
-                        </div>
-                    </div>
+                    <div class="info-row"><i class="fas fa-map-marker-alt"></i><div><h4>Address</h4><p>Hatuniya Bus Stand,<br>Tehsil: Shamgarh,<br>Dist: Mandsaur (M.P.) - 458883</p></div></div>
+                    <div class="info-row"><i class="fas fa-phone-alt"></i><div><h4>Call Us</h4><p>+91 96850 42819</p></div></div>
+                    <div class="info-row"><i class="fas fa-envelope"></i><div><h4>Email</h4><p>patidarelectric.sp@gmail.com</p></div></div>
                 </div>
-
-                <!-- Small Map -->
                 <div class="map-box">
-                    <iframe src="https://maps.google.com/maps?q=Hatuniya,+Madhya+Pradesh+458883&t=&z=13&ie=UTF8&iwloc=&output=embed" 
-                    allowfullscreen="" loading="lazy" title="Patidar Electrics Location"></iframe>
+                    <iframe src="https://maps.google.com/maps?q=Hatuniya,+Madhya+Pradesh+458883&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
-
-            <!-- Bottom Row: Contact Form -->
             <div class="contact-form-container reveal">
                 <h3 style="margin-bottom: 20px;">Send a Message</h3>
-                <!-- Form updated to use JavaScript function -->
                 <form onsubmit="sendEnquiry(event)">
-                    <div class="form-group">
-                        <input type="text" id="uName" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" id="uMobile" placeholder="Mobile Number" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="uMessage" rows="4" placeholder="How can we help you?" required></textarea>
-                    </div>
+                    <div class="form-group"><input type="text" id="uName" placeholder="Your Name" required></div>
+                    <div class="form-group"><input type="tel" id="uMobile" placeholder="Mobile Number" required></div>
+                    <div class="form-group"><textarea id="uMessage" rows="4" placeholder="How can we help you?" required></textarea></div>
                     <button type="submit" class="btn-submit">Send Message</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p style="font-weight: 600; color: white;">Patidar Electrics & Motor Rewinding</p>
-        <div class="copyright">
-            <p>&copy; 2023 All Rights Reserved.</p>
-        </div>
+        <div class="copyright"><p>&copy; 2023 All Rights Reserved.</p></div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        // Sticky Navigation
         window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            header.classList.toggle('scrolled', window.scrollY > 50);
+            document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
         });
-
-        // Mobile Menu
         const menuToggle = document.getElementById('mobile-menu');
         const navLinks = document.querySelector('.nav-links');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
+        menuToggle.addEventListener('click', () => { navLinks.classList.toggle('active'); });
         document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
+            link.addEventListener('click', () => { navLinks.classList.remove('active'); });
         });
-
-        // Scroll Reveal Animation
         window.addEventListener('scroll', reveal);
         function reveal() {
             var reveals = document.querySelectorAll('.reveal');
             for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var revealTop = reveals[i].getBoundingClientRect().top;
-                var revealPoint = 150;
-                if (revealTop < windowHeight - revealPoint) {
+                if (reveals[i].getBoundingClientRect().top < window.innerHeight - 150) {
                     reveals[i].classList.add('active');
                 }
             }
         }
-        reveal(); // Trigger on load
+        reveal();
 
-        // --- NEW FUNCTION: SEND TO WHATSAPP & EMAIL ---
         function sendEnquiry(event) {
-            event.preventDefault(); // Prevent page reload
-
-            // 1. Get User Input
+            event.preventDefault();
             var name = document.getElementById("uName").value;
             var mobile = document.getElementById("uMobile").value;
             var message = document.getElementById("uMessage").value;
-
-            // 2. Configuration (UPDATE YOUR NUMBER HERE)
-            var phoneNumber = "919685042819"; // Format: 91 followed by 10 digit number
+            var phoneNumber = "919685042819"; 
             var emailAddress = "patidarelectric.sp@gmail.com";
-
-            // 3. Construct the Message
-            var fullMessage = "Hello Patidar Electrics,%0A%0A" +
-                              "My Name: " + name + "%0A" +
-                              "Mobile: " + mobile + "%0A" +
-                              "Enquiry: " + message;
-
-            // 4. Open WhatsApp (Primary Action)
-            var whatsappUrl = "https://wa.me/" + phoneNumber + "?text=" + fullMessage;
-            window.open(whatsappUrl, '_blank');
-
-            // 5. Open Email Client (Secondary Action)
-            // This opens the user's default mail app with the message pre-filled
-            var mailtoUrl = "mailto:" + emailAddress + 
-                            "?subject=New Enquiry from " + name + 
-                            "&body=" + fullMessage;
-            
-            // Small delay to allow WhatsApp to open first
+            var fullMessage = "Hello Patidar Electrics,%0A%0A" + "My Name: " + name + "%0A" + "Mobile: " + mobile + "%0A" + "Enquiry: " + message;
+            window.open("https://wa.me/" + phoneNumber + "?text=" + fullMessage, '_blank');
             setTimeout(function() {
-                window.location.href = mailtoUrl;
+                window.location.href = "mailto:" + emailAddress + "?subject=New Enquiry from " + name + "&body=" + fullMessage;
             }, 1000);
         }
     </script>
